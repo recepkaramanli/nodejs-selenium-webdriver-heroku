@@ -10,7 +10,8 @@
     "start": "node index.js",
     "test": "node test.js",
     "build": "next build",
-    "postinstall": "chmod -R +x node_modules/next/dist/bin/next-* && npm run build"
+    "postinstall": "chmod 777 /app/geckodriver",
+    "postinstall": "chmod 777 /app/chromedriver"
   },
   "dependencies": {
     "ejs": "^2.5.6",
