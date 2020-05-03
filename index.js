@@ -11,7 +11,7 @@ options.addArguments("--headless");
 options.addArguments("--disable-gpu");
 options.addArguments("--no-sandbox");
 
-app.get('/', async function (req, res) {
+app.get('/start', async function (req, res) {
     
     let driver = new webdriver.Builder()
     .forBrowser('chrome')
