@@ -19,8 +19,8 @@ app.get('/', async function (req, res) {
     .setChromeOptions(options)
     .setChromeService(serviceBuilder)
     .build();
-      //await driver.get('https://www.sahibinden.com/ilan/ikinci-el-ve-sifir-alisveris-bilgisayar-dizustu-notebook-dell-vostro-5590-i7-10510u-hatasiz-garantili-carsi-iletisimden-816835175/detay')
-      await driver.get('https://www.recepkaramanli.com/fiyat-takip');
+      await driver.get('https://www.sahibinden.com/ilan/ikinci-el-ve-sifir-alisveris-bilgisayar-dizustu-notebook-dell-vostro-5590-i7-10510u-hatasiz-garantili-carsi-iletisimden-816835175/detay')
+      //await driver.get('https://www.recepkaramanli.com/fiyat-takip');
      // await sleep(5000)
       //await driver.getPageSource().then(function(res) { console.log(res)); })
       await driver.getTitle().then(function(title) { res.send(title); });
