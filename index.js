@@ -8,9 +8,9 @@ var sleep = require('sleep-promise');
 let options = new chrome.Options();
 options.setChromeBinaryPath(process.env.CHROME_BINARY_PATH);
 let serviceBuilder = new chrome.ServiceBuilder(process.env.CHROME_DRIVER_PATH);
-options.addArguments("--headless");
-options.addArguments("--disable-gpu");
-options.addArguments("--no-sandbox");
+//options.addArguments("--headless");
+//options.addArguments("--disable-gpu");
+//options.addArguments("--no-sandbox");
 
 app.get('/', async function (req, res) {
     
@@ -23,7 +23,7 @@ app.get('/', async function (req, res) {
       //await driver.get('https://www.recepkaramanli.com/fiyat-takip');
      // await sleep(5000)
       //await driver.getPageSource().then(function(res) { console.log(res)); })
-      await driver.getTitle().then(function(title) { res.send('sayfatitle: '+title); });
+      await driver.getTitle().then(function(title) { res.send(title); });
   
 })
 
