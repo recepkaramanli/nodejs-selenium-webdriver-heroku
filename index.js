@@ -2,7 +2,8 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 const webdriver = require('selenium-webdriver')
-const chrome = require('selenium-webdriver/chrome')
+var app = express()
+chrome = require('selenium-webdriver/chrome')
 var sleep = require('sleep-promise');
 let options = new chrome.Options();
 options.setChromeBinaryPath(process.env.CHROME_BINARY_PATH);
