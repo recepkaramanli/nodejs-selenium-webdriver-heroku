@@ -10,7 +10,6 @@
     "start": "node index.js",
     "test": "node test.js",
     "build": "next build",
-    "postinstall": "chmod 777 /app/geckodriver",
     "postinstall": "chmod 777 /app/chromedriver"
   },
   "dependencies": {
