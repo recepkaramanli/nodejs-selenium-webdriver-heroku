@@ -3,8 +3,8 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const webdriver = require('selenium-webdriver')
 var app = express()
-chrome = require('selenium-webdriver/firefox')
-var sleep = require('sleep-promise');
+chrome = require('selenium-webdriver/chrome')
+//var sleep = require('sleep-promise');
 let options = new chrome.Options();
 options.setChromeBinaryPath(process.env.CHROME_BINARY_PATH);
 let serviceBuilder = new chrome.ServiceBuilder(process.env.CHROME_DRIVER_PATH);
@@ -15,9 +15,9 @@ options.addArguments("--no-sandbox");
 app.get('/', async function (req, res) {
     
     let driver = new webdriver.Builder()
-    .forBrowser('firefox')
-    .setFirefoxOptions(options)
-    .setFirefoxService(serviceBuilder)
+    .forBrowser('chrome')
+    .setChromeOptions(options)
+    .setChromeService(serviceBuilder)
     .build();
       await driver.get('https://www.hepsiburada.com/microsoft-xbox-one-s-kablosuz-oyun-kumandasi-beyaz-p-HBV000003SKRG?magaza=Nethouse')
       //await driver.get('https://www.recepkaramanli.com/fiyat-takip');
