@@ -6,15 +6,21 @@ const webdriver = require('selenium-webdriver')
 chrome = require('selenium-webdriver/chrome')
 var sleep = require('sleep-promise');
 
-options = new chrome.Options();
-options.addArguments('headless');
-options.addArguments('disable-gpu');
-options.addArguments('--no-sandbox');
-options.addArguments('--remote-debugging-port=9222');
-options.addArguments('--user-data-dir=chrome-data');
+    let options = new chrome.Options();
+    options.setChromeBinaryPath(process.env.CHROME_BINARY_PATH);
+    let serviceBuilder = new chrome.ServiceBuilder(process.env.CHROME_DRIVER_PATH);
+
+    //Don't forget to add these for heroku
+    options.addArguments("--headless");
+    options.addArguments("--disable-gpu");
+    options.addArguments("--no-sandbox");
 
 async function sayfaac() {
-  let driver = await new webdriver.Builder().forBrowser('chrome').setChromeOptions(options).build();
+ let driver = new webdriver.Builder()
+    .forBrowser('chrome')
+    .setChromeOptions(options)
+    .setChromeService(serviceBuilder)
+    .build();
   //await driver.get('https://www.sahibinden.com/ilan/ikinci-el-ve-sifir-alisveris-bilgisayar-dizustu-notebook-dell-vostro-5590-i7-10510u-hatasiz-garantili-carsi-iletisimden-816835175/detay')
   await driver.get('https://www.recepkaramanli.com/fiyat-takip');
   await sleep(5000)
