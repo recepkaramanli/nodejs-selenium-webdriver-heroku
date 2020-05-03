@@ -23,7 +23,7 @@ app.get('/', async function (req, res) {
       //await driver.get('https://www.recepkaramanli.com/fiyat-takip');
      // await sleep(5000)
       //await driver.getPageSource().then(function(res) { console.log(res)); })
-      await driver.getTitle().then(function(title) { res.send(title); });
+      await driver.getTitle().then(function(title) { res.send('sayfatitle: '+title); });
   
 })
 
