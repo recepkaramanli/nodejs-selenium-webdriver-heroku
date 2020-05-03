@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 const webdriver = require('selenium-webdriver')
-chrome = require('selenium-webdriver/chrome')
+const chrome = require('selenium-webdriver/chrome')
 var sleep = require('sleep-promise');
 let options = new chrome.Options();
 options.setChromeBinaryPath(process.env.CHROME_BINARY_PATH);
@@ -11,7 +11,7 @@ options.addArguments("--headless");
 options.addArguments("--disable-gpu");
 options.addArguments("--no-sandbox");
 
-app.get('/start', async function (req, res) {
+app.get('/', async function (req, res) {
     
     let driver = new webdriver.Builder()
     .forBrowser('chrome')
