@@ -3,7 +3,7 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const webdriver = require('selenium-webdriver')
 var app = express()
-chrome = require('selenium-webdriver/chrome')
+chrome = require('selenium-webdriver/firefox')
 var sleep = require('sleep-promise');
 let options = new chrome.Options();
 options.setChromeBinaryPath(process.env.CHROME_BINARY_PATH);
@@ -15,7 +15,7 @@ options.addArguments("--no-sandbox");
 app.get('/', async function (req, res) {
     
     let driver = new webdriver.Builder()
-    .forBrowser('chrome')
+    .forBrowser('firefox')
     .setChromeOptions(options)
     .setChromeService(serviceBuilder)
     .build();
