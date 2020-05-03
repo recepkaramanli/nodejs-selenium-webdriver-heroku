@@ -16,8 +16,8 @@ app.get('/', async function (req, res) {
     
     let driver = new webdriver.Builder()
     .forBrowser('firefox')
-    .setChromeOptions(options)
-    .setChromeService(serviceBuilder)
+    .setFirefoxOptions(options)
+    .setFirefoxService(serviceBuilder)
     .build();
       await driver.get('https://www.hepsiburada.com/microsoft-xbox-one-s-kablosuz-oyun-kumandasi-beyaz-p-HBV000003SKRG?magaza=Nethouse')
       //await driver.get('https://www.recepkaramanli.com/fiyat-takip');
