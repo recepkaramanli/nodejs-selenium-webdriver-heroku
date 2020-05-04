@@ -24,7 +24,7 @@ app.get('/url/:data', async function (req, res) {
     .setChromeService(serviceBuilder)
     .build();
       await driver.get(text)
-      //await sleep(5000)
+      await sleep(5000)
       await driver.getPageSource().then(function(source) { res.send(source); })
       //await driver.getTitle().then(function(title) { res.send(title); });
   
