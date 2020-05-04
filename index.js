@@ -13,18 +13,20 @@ options.addArguments("--disable-gpu");
 options.addArguments("--no-sandbox");
 options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36")
 
-app.get('/', async function (req, res) {
+app.get('/url/:data', async function (req, res) {
+    
+    let buff = new Buffer(req.params.data, 'base64')
+    let text = buff.toString('ascii')
     
     let driver = new webdriver.Builder()
     .forBrowser('chrome')
     .setChromeOptions(options)
     .setChromeService(serviceBuilder)
     .build();
-      await driver.get('https://www.hepsiburada.com/microsoft-xbox-one-s-kablosuz-oyun-kumandasi-beyaz-p-HBV000003SKRG?magaza=Nethouse')
-      //await driver.get('https://www.recepkaramanli.com/fiyat-takip/islemtest.php');
+      await driver.get(text)
       //await sleep(5000)
-      //await driver.getPageSource().then(function(res) { console.log(res)); })
-      await driver.getTitle().then(function(title) { res.send(title); });
+      await driver.getPageSource().then(function(source) { res.send(source)); })
+      //await driver.getTitle().then(function(title) { res.send(title); });
   
 })
 
