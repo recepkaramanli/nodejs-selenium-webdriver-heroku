@@ -25,7 +25,7 @@ app.get('/url/:data', async function (req, res) {
     .build();
       await driver.get(text)
       //await sleep(5000)
-      await driver.getPageSource().then(function(source) { res.send(source)); })
+      await driver.getPageSource().then(function(source) { res.send(source); })
       //await driver.getTitle().then(function(title) { res.send(title); });
   
 })
