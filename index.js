@@ -21,9 +21,9 @@ app.get('/', async function (req, res) {
     .setChromeOptions(options)
     .setChromeService(serviceBuilder)
     .build();
-      await driver.get('https://www.hepsiburada.com/microsoft-xbox-one-s-kablosuz-oyun-kumandasi-beyaz-p-HBV000003SKRG?magaza=Nethouse')
-      //await driver.get('https://www.recepkaramanli.com/fiyat-takip');
-      await sleep(5000)
+      //await driver.get('https://www.hepsiburada.com/microsoft-xbox-one-s-kablosuz-oyun-kumandasi-beyaz-p-HBV000003SKRG?magaza=Nethouse')
+      await driver.get('https://www.recepkaramanli.com/fiyat-takip/islemtest.php');
+      //await sleep(5000)
       //await driver.getPageSource().then(function(res) { console.log(res)); })
       await driver.getTitle().then(function(title) { res.send(title); });
   
