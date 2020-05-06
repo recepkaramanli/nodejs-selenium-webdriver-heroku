@@ -15,15 +15,15 @@ options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple
 
 app.get('/url/:data', async function (req, res) {
     
-    let buff = new Buffer(req.params.data, 'base64')
-    let text = buff.toString('ascii')
+    //let buff = new Buffer(req.params.data, 'base64')
+    //let text = buff.toString('ascii')
     
     let driver = new webdriver.Builder()
     .forBrowser('chrome')
     .setChromeOptions(options)
     .setChromeService(serviceBuilder)
     .build();
-      await driver.get(text)
+      await driver.get('https://www.recepkaramanli.com')
       await sleep(5000)
       await driver.getPageSource().then(function(source) { res.send(source); })
       //await driver.getTitle().then(function(title) { res.send(title); });
