@@ -23,7 +23,7 @@ app.get('/url/:data', async function (req, res) {
     .setChromeOptions(options)
     .setChromeService(serviceBuilder)
     .build();
-      await driver.get('https://www.recepkaramanli.com')
+      await driver.get('https://www.hepsiburada.com/microsoft-xbox-one-s-kablosuz-oyun-kumandasi-beyaz-p-HBV000003SKRG?magaza=Nethouse')
       await sleep(5000)
       await driver.getPageSource().then(function(source) { res.send(source); })
       //await driver.getTitle().then(function(title) { res.send(title); });
